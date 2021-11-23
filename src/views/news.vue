@@ -11,7 +11,7 @@
           <ion-title size="large">ข่าวสาร</ion-title>
         </ion-toolbar>
       </ion-header>
-    
+      
       <ExploreContainer name="ข่าวสาร" />
     </ion-content>
   </ion-page>
@@ -19,10 +19,10 @@
 
 <script lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import ExploreContainer from '../components/ExploreContainer.vue';
 
 export default  {
-  name: 'news',
+  name: 'News',
   components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
 }
 </script>

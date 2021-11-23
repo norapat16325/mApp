@@ -6,23 +6,37 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">หน้าหลัก</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <ExploreContainer name="หน้าหลัก" />
+     
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <ion-button color="light" size="small">button1</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="dark"  expand="block">button2</ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button color="tertiary" size="large" expand="full">button3</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="medium" size="small" shape="round" fill="outline">button4</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonGrid, IonRow, IonCol } from '@ionic/vue';
+
 
 export default  {
   name: 'Tab1',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButton, IonGrid, IonRow, IonCol }
 }
 </script>
