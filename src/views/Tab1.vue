@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>หน้าหลัก</ion-title>
+        <ion-title>Tab 1</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -12,7 +12,7 @@
         </ion-toolbar>
       </ion-header>
     
-      <ExploreContainer name="Tab1" />
+      <ExploreContainer name="หน้าหลัก" />
     </ion-content>
   </ion-page>
 </template>
