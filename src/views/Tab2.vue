@@ -6,6 +6,14 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button @click="addProduct">
+           <ion-icon :icon="add"></ion-icon>
+          </ion-fab-button>
+      </ion-fab>
+
+
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -17,7 +25,7 @@
                   รายละเอียด สินค้า 1
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(1)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -31,7 +39,7 @@
                   รายละเอียด สินค้า 2
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(2)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -46,7 +54,7 @@
                   รายละเอียด สินค้า 3
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(3)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -59,7 +67,7 @@
                   รายละเอียด สินค้า 4
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(4)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -74,7 +82,7 @@
                   รายละเอียด สินค้า 5
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(5)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -87,7 +95,7 @@
                   รายละเอียด สินค้า 6
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button color="success" size="small" @click="buy"> สั่งซื้อ </ion-button>
+                <ion-button shape="round" fill="outline" @click="buy(6)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -98,22 +106,37 @@
 </template>
 
 <script lang="ts">
-import {  alertController, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonPage, IonHeader, IonToolbar, IonTitle, IonContent,  IonGrid, IonRow, IonCol } from '@ionic/vue';
+import {  IonFab, IonFabButton,IonIcon,alertController, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonPage, IonHeader, IonToolbar, IonTitle, IonContent,  IonGrid, IonRow, IonCol } from '@ionic/vue';
+ import {add} from "ionicons/icons";
 
 export default  {
   name: 'Tab2',
-  components: { IonButton,IonCard, IonCardHeader, IonCardTitle, IonCardContent,IonHeader, IonToolbar, IonTitle, IonContent, IonPage,  IonGrid, IonRow, IonCol },
+  components: { IonFab, IonFabButton,IonIcon,IonButton,IonCard, IonCardHeader, IonCardTitle, IonCardContent,IonHeader, IonToolbar, IonTitle, IonContent, IonPage,  IonGrid, IonRow, IonCol },
+
+    setup() {
+      return {
+        add
+    }
+  },
 
 methods :{
-  async buy(){
+  async addProduct(){
     const alert = await alertController.create({
-      message: "ยืนยันการสั่งซื้อ $(id)",
-      buttons: [
+      header: "เพิ่มข้อมูลสินค้า",
+      inputs:[
+        {
+          placeholder: "กรอกรหัสสินค้า"
+        },
+        {
+          placeholder: "กรอกราคาสินค้า"
+        }
+      
+      ],
+       buttons: [
         {
           text: "ยืนยัน",
           handler: () => {
-            console.log("ยืนยัน");
-            
+            console.log("ยืนยันการเพิ่มสินค้า"); 
           }
         },
 
@@ -121,6 +144,32 @@ methods :{
           text: "ยกเลิก",
            handler: () =>{
              console.log("ยกเลิก");
+           }
+          
+        }
+      ]
+
+    });
+
+    await alert.present();
+
+  },
+  async buy(id: number){
+    const alert = await alertController.create({
+      header: 'ยืนยันการสั่งสื้อ',
+      message: `สินค้ารหัส ${id}`,
+      buttons: [
+        {
+          text: "ยืนยัน",
+          handler: () => {
+            console.log("ยืนยัน" + id); 
+          }
+        },
+
+        {
+          text: "ยกเลิก",
+           handler: () =>{
+             console.log("ยกเลิก"+id);
            }
           
         }

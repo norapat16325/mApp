@@ -2,7 +2,7 @@
   <ion-page>
     <ion-tabs>
       <ion-router-outlet></ion-router-outlet>
-      <ion-tab-bar :slot="bottom" />
+      <ion-tab-bar slot="bottom">
         <ion-tab-button tab="tab1" href="/tabs/tab1">
           <ion-icon :icon="home" />
           <ion-label>หน้าหลัก</ion-label>
@@ -28,49 +28,12 @@
 </template>
 
 <script lang="ts">
-import {
-Ion
-AlertController,
-IonCard,
-IonCardHeader,
-IonTabBar,
-IonTabButton,
-IonTabs,
-IonLabel,
-IonIcon,
-IonPage,
-IonRouterOutlet,
-alertController, 
-} from '@ionic/vue';
+import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
 import { cart, person, home, newspaper } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
-  components: {
-    IonCard,
-    IonCardHeader,
-    IonLabel,
-    IonTabs,
-    IonTabBar,
-    IonTabButton,
-    IonIcon,
-    IonPage,
-    IonRouterOutlet,
-    },
-methood: {
-  async buy(id: number) {
-    const alert = await alertController.create({
-      header: `ยืนยันการสั้งซื้อ $(id)`,
-      message `สินค้ารหัส $(id)`,
-      buttons: [
-        {
-          text: "ยืนยัน",
-
-        }
-      ]
-    })
-  }
-}
+  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
   setup() {
     return {
       cart, 
