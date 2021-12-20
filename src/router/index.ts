@@ -28,8 +28,12 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3.vue')
       },
       {
-        path: 'news',
-        component: () => import('@/views/news.vue')
+        path: 'News',
+        component: () => import('@/views/News.vue')
+      },
+      {
+        path: 'Setting',
+        component: () => import('@/views/Setting.vue')
       }
     ]
   }

@@ -18,9 +18,14 @@
           <ion-label>ลูกค้า</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="news" href="/tabs/news">
+        <ion-tab-button tab="News" href="/tabs/News">
           <ion-icon :icon="newspaper" />
           <ion-label>ข่าวสาร</ion-label>
+          </ion-tab-button>
+
+          <ion-tab-button tab="Setting" href="/tabs/Setting">
+          <ion-icon :icon="settings" />
+          <ion-label>ตั้งค่า</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -29,7 +34,7 @@
 
 <script lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { cart, person, home, newspaper } from 'ionicons/icons';
+import { cart, person, home, newspaper,settings, } from 'ionicons/icons';
 
 export default {
   name: 'Tabs',
@@ -39,7 +44,8 @@ export default {
       cart, 
       person, 
       home,
-      newspaper
+      newspaper,
+      settings
     }
   }
 }

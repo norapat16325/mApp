@@ -25,7 +25,7 @@
                   รายละเอียด สินค้า 1
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(1)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(1)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -39,7 +39,7 @@
                   รายละเอียด สินค้า 2
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(2)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(2)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -54,7 +54,7 @@
                   รายละเอียด สินค้า 3
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(3)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(3)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -67,7 +67,7 @@
                   รายละเอียด สินค้า 4
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(4)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(4)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -82,7 +82,7 @@
                   รายละเอียด สินค้า 5
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(5)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(5)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -95,7 +95,7 @@
                   รายละเอียด สินค้า 6
                   </ion-card-content>
                   <ion-card-content>
-                <ion-button shape="round" fill="outline" @click="buy(6)"> สั่งซื้อ </ion-button>
+                <ion-button color="light" size="small" @click="buy(6)"> สั่งซื้อ </ion-button>
                 </ion-card-content>
               </ion-card>
             </ion-col>
@@ -108,17 +108,14 @@
 <script lang="ts">
 import {  IonFab, IonFabButton,IonIcon,alertController, IonButton, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonPage, IonHeader, IonToolbar, IonTitle, IonContent,  IonGrid, IonRow, IonCol } from '@ionic/vue';
  import {add} from "ionicons/icons";
-
 export default  {
   name: 'Tab2',
   components: { IonFab, IonFabButton,IonIcon,IonButton,IonCard, IonCardHeader, IonCardTitle, IonCardContent,IonHeader, IonToolbar, IonTitle, IonContent, IonPage,  IonGrid, IonRow, IonCol },
-
     setup() {
       return {
         add
     }
   },
-
 methods :{
   async addProduct(){
     const alert = await alertController.create({
@@ -139,7 +136,6 @@ methods :{
             console.log("ยืนยันการเพิ่มสินค้า"); 
           }
         },
-
         {
           text: "ยกเลิก",
            handler: () =>{
@@ -148,11 +144,8 @@ methods :{
           
         }
       ]
-
     });
-
     await alert.present();
-
   },
   async buy(id: number){
     const alert = await alertController.create({
@@ -165,11 +158,10 @@ methods :{
             console.log("ยืนยัน" + id); 
           }
         },
-
         {
           text: "ยกเลิก",
            handler: () =>{
-             console.log("ยกเลิก"+id);
+             console.log("ยกเลิก");
            }
           
         }
